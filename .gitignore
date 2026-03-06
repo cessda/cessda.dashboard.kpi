@@ -8,3 +8,24 @@ devenv.local.yaml
 
 # pre-commit
 .pre-commit-config.yaml
+# Quarto
+/.quarto/
+*_files/
+*_cache/
+/.freeze/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+
+# devenv
+.devenv/
+.direnv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Output
+public/
