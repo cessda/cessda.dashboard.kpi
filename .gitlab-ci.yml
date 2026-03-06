@@ -1,0 +1,49 @@
+image: python:3.13-slim
+
+cache:
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - .venv/
+    - .cache/uv/
+
+variables:
+  UV_CACHE_DIR: .cache/uv
+  UV_LINK_MODE: copy
+  QUARTO_VERSION: "1.6.40"
+
+stages:
+  - build
+  - deploy
+
+# ─────────────────────────────────────────
+# BUILD: render the Quarto dashboard
+# ─────────────────────────────────────────
+build-dashboard:
+  stage: build
+  before_script:
+    - pip install uv --quiet
+    - uv sync
+    - apt-get update -qq && apt-get install -y -qq curl gdebi-core
+    - curl -fsSL https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb -o quarto.deb
+    - gdebi -n quarto.deb
+    - uv run python -m ipykernel install --user --name=sp-analysis
+  script:
+    - uv run quarto render dashboard.qmd --output-dir public
+  artifacts:
+    paths:
+      - public/
+    expire_in: 1 week
+  only:
+    - master
+
+pages:
+  stage: deploy
+  dependencies:
+    - build-dashboard
+  script:
+    - echo "Deploying to GitLab Pages"
+  artifacts:
+    paths:
+      - public/
+  only:
+    - master
