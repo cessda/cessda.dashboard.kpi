@@ -29,3 +29,5 @@ __pycache__/
 
 # Output
 public/
+
+**/*.quarto_ipynb

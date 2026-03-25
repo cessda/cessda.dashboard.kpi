@@ -5,191 +5,212 @@ format:
   dashboard:
     theme: cosmo
     scrolling: true
-    sidebar:
-        style: docked
-        background: light
-    nav-buttons: [github]
+    include-in-header:
+      text: |
+        <style>
+          .navbar { display: none !important; }
+          .quarto-dashboard-content { margin-top: 0 !important; }
+        </style>
 execute:
   echo: false
   warning: false
   message: false
+jupyter: cessda_report
 ---
 
 ```{python}
 #| include: false
-from sp_analysis import load_data, prepare, facet_chart
-
+from sp_analysis import load_data, prepare_by_kpi_all_countries, facet_chart_by_country, KPI_LABELS
 df = load_data()
+ALL_KPIS = list(KPI_LABELS.keys())
+long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
 ```
 
-# Visits
+# {.sidebar}
 
-## Row
+**Countries**
 
-### Absolute (log scale)
+---
 
-```{python}
-facet_chart(
-    prepare(df, 'c1_visits'),
-    col='c1_visits',
-    y_title='Number of Visits',
-    title='SP Website Visits by Country',
-)
-```
+<nav class="nav flex-column nav-pills">
+  <a class="nav-link" href="#austria">Austria</a>
+  <a class="nav-link" href="#switzerland">Switzerland</a>
+  <a class="nav-link" href="#czecha">Czecha</a>
+  <a class="nav-link" href="#germany">Germany</a>
+  <a class="nav-link" href="#denmark">Denmark</a>
+  <a class="nav-link" href="#greece">Greece</a>
+  <a class="nav-link" href="#finland">Finland</a>
+  <a class="nav-link" href="#france">France</a>
+  <a class="nav-link" href="#croatia">Croatia</a>
+  <a class="nav-link" href="#hungary">Hungary</a>
+  <a class="nav-link" href="#ireland">Ireland</a>
+  <a class="nav-link" href="#iceland">Iceland</a>
+  <a class="nav-link" href="#italy">Italy</a>
+  <a class="nav-link" href="#netherlands">Netherlands</a>
+  <a class="nav-link" href="#norway">Norway</a>
+  <a class="nav-link" href="#portugal">Portugal</a>
+  <a class="nav-link" href="#sweden">Sweden</a>
+  <a class="nav-link" href="#slovenia">Slovenia</a>
+  <a class="nav-link" href="#slovakia">Slovakia</a>
+  <a class="nav-link" href="#united-kingdom">United Kingdom</a>
+</nav>
 
-## Row
-
-### % Change from first year
-
-```{python}
-facet_chart(
-    prepare(df, 'c1_visits', pct=True),
-    col='c1_visits_pct',
-    y_title='% Change from First Year',
-    title='C1 Visits — % Change from First Year',
-    pct=True,
-)
-```
-
-# Users
-
-## Row
-
-```{python}
-facet_chart(
-    prepare(df, 'c2_user'),
-    col='c2_user',
-    y_title='Number of Users',
-    title='C2 Users by Country',
-)
-```
-
-# PDO Deliveries
+# Austria {#austria}
 
 ## Row
 
 ```{python}
-facet_chart(
-    prepare(df, 'c3_pdoDeliver'),
-    col='c3_pdoDeliver',
-    y_title='Number of Deliveries',
-    title='C3 PDO Deliveries by Country',
-)
+facet_chart_by_country(long_df, 'Austria', title='Austria')
 ```
 
-# Events
-
-## Row
-
-### Training Events (C4)
-
-```{python}
-facet_chart(
-    prepare(df, 'c4_events'),
-    col='c4_events',
-    y_title='Number of Events',
-    title='C4 Events by Country',
-)
-```
-
-## Row
-
-### All Events (C8)
-
-```{python}
-facet_chart(
-    prepare(df, 'c8_allEvent'),
-    col='c8_allEvent',
-    y_title='Number of All Events',
-    title='C8 All Events by Country',
-)
-```
-
-## Row
-
-### Event Attendees (C6)
-
-```{python}
-facet_chart(
-    prepare(df, 'c6_eAttendees'),
-    col='c6_eAttendees',
-    y_title='Number of Attendees',
-    title='C6 Event Attendees by Country',
-)
-```
-
-# PDO Stored
+# Switzerland {#switzerland}
 
 ## Row
 
 ```{python}
-facet_chart(
-    prepare(df, 'c10_pdoStored'),
-    col='c10_pdoStored',
-    y_title='Number of PDO Stored',
-    title='C10 PDO Stored by Country',
-)
+facet_chart_by_country(long_df, 'Switzerland', title='Switzerland')
 ```
 
-# Staff & Funding
-
-## Row
-
-### Total Staff (C13)
-
-```{python}
-facet_chart(
-    prepare(df, 'c13_staff'),
-    col='c13_staff',
-    y_title='Number of Staff',
-    title='C13 Staff by Country',
-)
-```
-
-### Contract Staff (C15)
-
-```{python}
-facet_chart(
-    prepare(df, 'c15_cstaff'),
-    col='c15_cstaff',
-    y_title='Number of Contract Staff',
-    title='C15 Contract Staff by Country',
-)
-```
-
-## Row
-
-### National Funds (C14)
-
-```{python}
-facet_chart(
-    prepare(df, 'c14_nfunds'),
-    col='c14_nfunds',
-    y_title='National Funds (€)',
-    title='C14 National Funds by Country',
-)
-```
-
-### Contract Funds (C16)
-
-```{python}
-facet_chart(
-    prepare(df, 'c16_cfunds'),
-    col='c16_cfunds',
-    y_title='Contract Funds (€)',
-    title='C16 Contract Funds by Country',
-)
-```
-
-# Publications
+# Czecha {#czecha}
 
 ## Row
 
 ```{python}
-facet_chart(
-    prepare(df, 'c19_pub'),
-    col='c19_pub',
-    y_title='Number of Publications',
-    title='C19 Publications by Country',
-)
+facet_chart_by_country(long_df, 'Czecha', title='Czecha')
+```
+
+# Germany {#germany}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Germany', title='Germany')
+```
+
+# Denmark {#denmark}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Denmark', title='Denmark')
+```
+
+# Greece {#greece}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Greece', title='Greece')
+```
+
+# Finland {#finland}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Finland', title='Finland')
+```
+
+# France {#france}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'France', title='France')
+```
+
+# Croatia {#croatia}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Croatia', title='Croatia')
+```
+
+# Hungary {#hungary}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Hungary', title='Hungary')
+```
+
+# Ireland {#ireland}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Ireland', title='Ireland')
+```
+
+# Iceland {#iceland}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Iceland', title='Iceland')
+```
+
+# Italy {#italy}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Italy', title='Italy')
+```
+
+# Netherlands {#netherlands}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Netherlands', title='Netherlands')
+```
+
+# Norway {#norway}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Norway', title='Norway')
+```
+
+# Portugal {#portugal}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Portugal', title='Portugal')
+```
+
+# Sweden {#sweden}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Sweden', title='Sweden')
+```
+
+# Slovenia {#slovenia}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Slovenia', title='Slovenia')
+```
+
+# Slovakia {#slovakia}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Slovakia', title='Slovakia')
+```
+
+# United Kingdom {#united-kingdom}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'United Kingdom', title='United Kingdom')
 ```
