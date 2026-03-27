@@ -19,11 +19,11 @@ def clean_column(df: pd.DataFrame, col: str) -> pd.DataFrame:
 KPI_LABELS = {
     'c1_visits':         'Visits',
     'c2_user':           'Users',
-    'c3_pdoDeliver':     'PDO Deliveries',
+    'c3_pdoDeliver_pid':     'PDO Deliveries',
     'c4_events':         'Training Events',
     'c6_eAttendees':     'Event Attendees',
     'c8_allEvent':       'All Events',
-    'c10_pdoStored':     'PDO Stored',
+    'c10_pdoStored_pid':     'PDO Stored',
     'c13_staff':         'Total Staff',
     'c14_nfunds':        'National Funds',
     'c15_cstaff':        'Contract Staff',
