@@ -56,6 +56,29 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
   <a class="nav-link" href="#united-kingdom">United Kingdom</a>
 </nav>
 
+# Home
+
+Thanks to your contributions, CESSDA has now collected key performance indicators (C-KPIs) for 2025 to measure our progress and impact within the European Research Area. 
+
+This dashboard supports the validation of data. Here are some general instructions:
+
+  - *Left sidebar*: Select your country to view the SP-specific dashboard
+  - *Top right corner [...]*: Download your dashboard as an image or view source code
+  - *Legends*: 
+    - Blue: Validated data
+    - Grey: 2025 data pending validation
+    - Red: Missing/unavailable data (displayed as outlier)
+
+Note: Please refer to the validation Excel file for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)
+
+If you identified any errors, please add comments directly in the Excel file.
+
+Moreover, please complete this short 3-question feedback survey by [date]. One response per SP is sufficient.
+
+If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office <lorraine.wong@cessda.eu>.
+
+Thank you for your time and input!
+
 # Austria {#austria}
 
 ## Row

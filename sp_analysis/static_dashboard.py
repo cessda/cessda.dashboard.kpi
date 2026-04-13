@@ -5,18 +5,20 @@ import altair as alt
 # ── KPI metadata ───────────────────────────────────────────────────────────────
 
 KPI_LABELS = {
-    'c1_visits':         'c1_visits',
-    'c2_user':           'c2_user',
-    'c3_pdoDeliver_pid': 'c3_pdoDeliver_pid',
-    'c4_events':         'c4_events',
-    'c6_eAttendees':     'c6_eAttendees',
-    'c8_allEvent':       'c8_allEvent',
-    'c10_pdoStored_pid': 'c10_pdoStored_pid',
-    'c13_staff':         'c13_staff',
-    'c14_nfunds':        'c14_nfunds',
-    'c15_cstaff':        'c15_cstaff',
-    'c16_cfunds':        'c16_cfunds',
-    'c19_pub':           'c19_pub',
+    'c1_visits':         'C-KPI-01 Web visits',
+    'c2_user':           'C-KPI-02 User accounts',
+
+    'c3_pdoDeliver_pid': 'C-KPI-03 PDO delivered (PID)',
+
+    'c4_events':         'C-KPI-04 Edu. events',
+    'c6_eAttendees':     'C-KPI-06 Edu. attendees',
+    'c8_allEvent':       'C-KPI-08 All events',
+    'c10_pdoStored_pid': 'C-KPI-10 PDO stored (PID)',
+    'c13_staff':         'C-KPI-13 National staff',
+    'c14_nfunds':        'C-KPI-14 National funding',
+    'c15_cstaff':        'C-KPI-15 CESSDA staff',
+    'c16_cfunds':        'C-KPI-16 CESSDA activities',
+    'c19_pub':           'C-KPI-19 Publications',
 }
 
 STATUS_DOMAIN = ['Validated', 'To be validated', 'Missing']
@@ -108,11 +110,12 @@ def facet_chart_by_country(
         .facet(
             facet=alt.Facet(
                 'kpi:N',
-                header=alt.Header(titleOrient='bottom', labelOrient='bottom'),
+                header=alt.Header(titleOrient='top', labelOrient='top'),
                 title=None,
             ),
             columns=columns,
         )
+        .configure_header(titleFontSize=20)
         .resolve_scale(y='independent')
         .resolve_axis(x='independent')
         .properties(
