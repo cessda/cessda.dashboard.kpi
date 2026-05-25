@@ -33,6 +33,8 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
 ---
 
 <nav class="nav flex-column nav-pills">
+
+  <a class="nav-link" href="">Home</a>
   <a class="nav-link" href="#austria">Austria</a>
   <a class="nav-link" href="#belgium">Belgium</a>
   <a class="nav-link" href="#switzerland">Switzerland</a>
@@ -45,6 +47,7 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
   <a class="nav-link" href="#hungary">Hungary</a>
   <a class="nav-link" href="#ireland">Ireland</a>
   <a class="nav-link" href="#iceland">Iceland</a>
+  <a class="nav-link" href="#lithuania">lithuania</a>
   <a class="nav-link" href="#italy">Italy</a>
   <a class="nav-link" href="#netherlands">Netherlands</a>
   <a class="nav-link" href="#norway">Norway</a>
@@ -176,6 +179,15 @@ facet_chart_by_country(long_df, 'Iceland', title='Iceland')
 
 ```{python}
 facet_chart_by_country(long_df, 'Italy', title='Italy')
+```
+
+
+# Lithuania {#lithuania}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Lithuania', title='Lithuania')
 ```
 
 # Netherlands {#netherlands}
