@@ -46,6 +46,7 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
   <a class="nav-link" href="#ireland">Ireland</a>
   <a class="nav-link" href="#iceland">Iceland</a>
   <a class="nav-link" href="#italy">Italy</a>
+  <a class="nav-link" href="#Lithuania">Lithuania</a>
   <a class="nav-link" href="#netherlands">Netherlands</a>
   <a class="nav-link" href="#norway">Norway</a>
   <a class="nav-link" href="#macedonia">North Macedonia</a>
@@ -62,18 +63,18 @@ Thanks to your contributions, CESSDA has now collected key performance indicator
 
 This dashboard supports the validation of data. Here are some general instructions:
 
-  - *Left sidebar*: Select your country to view the SP-specific dashboard
-  - *Top right corner [...]*: Download your dashboard as an image or view source code
-  - *Legends*: 
+  - **Left sidebar**: Select your country to view the SP-specific dashboard
+  - **Top right corner [...]**: Download your dashboard as an image or view source code
+  - **Legends**: 
     - Blue: Validated data
     - Grey: 2025 data pending validation
     - Red: Missing/unavailable data (displayed as outlier)
 
 Note: Please refer to the validation Excel file for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)
 
-If you identified any errors, please add comments directly in the Excel file.
+If you identified any errors, please add comments directly in the [Excel file](https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/edit?gid=663340094#gid=663340094).
 
-Moreover, please complete this short 3-question feedback survey by [date]. One response per SP is sufficient.
+Moreover, please complete this short 3-question feedback [survey](https://forms.gle/KJnVJj9qKyhUJCm87) by **2 July 2026**. One response per SP is sufficient.
 
 If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office <lorraine.wong@cessda.eu>.
 
@@ -176,6 +177,14 @@ facet_chart_by_country(long_df, 'Iceland', title='Iceland')
 
 ```{python}
 facet_chart_by_country(long_df, 'Italy', title='Italy')
+```
+
+# Lithuania {#lithuania}
+
+## Row
+
+```{python}
+facet_chart_by_country(long_df, 'Lithuania', title='Lithuania')
 ```
 
 # Netherlands {#netherlands}
