@@ -7,8 +7,6 @@
 ## Setup
 
 ```bash
-devenv shell
-
 uv run python -m ipykernel install --user --name=sp-analysis --display-name="sp-analysis"
 
 uv run jupyter notebook
