@@ -53,6 +53,20 @@ def prepare_by_kpi_all_countries(df: pd.DataFrame, kpis: list[str]) -> pd.DataFr
     return pd.concat(frames, ignore_index=True)
 
 
+
+def dynamic_db_prepare_by_kpi_all_countries(df: pd.DataFrame, kpis: list[str]) -> pd.DataFrame:
+    """Aggregate per country + year, melt into long format grouped by KPI.
+
+    Returns columns: year, countryname, kpi, value
+    """
+    frames = []
+    for col in kpis:
+        tmp = clean_column(df, col)
+        agg = tmp.groupby(['countryname', 'year'])[col].sum(min_count=1).reset_index()
+        agg = agg.rename(columns={col: 'value'})
+        agg['kpi'] = col
+        frames.append(agg)
+    return pd.concat(frames, ignore_index=True)
 # ── Chart helper ───────────────────────────────────────────────────────────────
 
 def facet_chart_by_country(
