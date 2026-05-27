@@ -1,7 +1,3 @@
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 8888
-CMD ["python", "dashboard.py"]
+FROM nginx:alpine
+COPY dashboard.html /usr/share/nginx/html/index.html
+EXPOSE 80
