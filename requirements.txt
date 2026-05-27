@@ -5,3 +5,6 @@ nicegui
 starlette
 anywidget
 ipykernel
+nbformat
+nbclient
+jupyter_client
