@@ -1,45 +1,20 @@
-name: CI Build
-
-on:
-  push:
-    branches: [ "master" ]
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-
-jobs:
-  build:
+update-gitops:
+    needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
-      - name: Checkout code
+      - name: Checkout GitOps repo
         uses: actions/checkout@v4
-        env:
-          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-      - name: Log in to GHCR
-        uses: docker/login-action@v3
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          repository: cessda/cessda-dashboard-gitops
+          token: ${{ secrets.GITOPS_PAT }}
+          path: gitops
 
-      - name: Extract image metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=sha,prefix=sha-
-            type=raw,value=latest
-
-      - name: Build and push image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
+      - name: Update image tag
+        run: |
+          cd gitops
+          sed -i "s|image: ghcr.io/cessda/cessda.dashboard.kpi:.*|image: ghcr.io/cessda/cessda.dashboard.kpi:sha-${GITHUB_SHA::7}|" deployment.yaml
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deployment.yaml
+          git diff --staged --quiet || git commit -m "chore: bump image to sha-${GITHUB_SHA::7}"
+          git push
