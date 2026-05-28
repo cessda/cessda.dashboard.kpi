@@ -7,17 +7,15 @@ import altair as alt
 KPI_LABELS = {
     'c1_visits':         'C-KPI-01 Web visits',
     'c2_user':           'C-KPI-02 User accounts',
-
-    'c3_pdoDeliver_pid': 'C-KPI-03 PDO delivered (PID)',
-
+    'c3_pdoDeliver_pid': 'C-KPI-03 PDO delivered (w/ PID)',
     'c4_events':         'C-KPI-04 Edu. events',
     'c6_eAttendees':     'C-KPI-06 Edu. attendees',
     'c8_allEvent':       'C-KPI-08 All events',
-    'c10_pdoStored_pid': 'C-KPI-10 PDO stored (PID)',
+    'c10_pdoStored_pid': 'C-KPI-10 PDO stored (w/ PID)',
     'c13_staff':         'C-KPI-13 National staff',
-    'c14_nfunds':        'C-KPI-14 National funding',
+    'c14_nfunds':        'C-KPI-14 National funds',
     'c15_cstaff':        'C-KPI-15 CESSDA staff',
-    'c16_cfunds':        'C-KPI-16 CESSDA activities',
+    'c16_cfunds':        'C-KPI-16 CESSDA funds',
     'c19_pub':           'C-KPI-19 Publications',
 }
 

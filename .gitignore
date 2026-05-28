@@ -30,4 +30,7 @@ __pycache__/
 # Output
 public/
 
-**/*.quarto_ipynb
+**/*.quarto_ipynb*
+
+# OS
+.DS_Store

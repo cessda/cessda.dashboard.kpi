@@ -2,6 +2,7 @@
 
 ## Prerequisites
 
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
 - [Nix](https://nixos.org/download) with flakes enabled
 - [devenv](https://devenv.sh/getting-started/)
 
