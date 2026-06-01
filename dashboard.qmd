@@ -63,24 +63,30 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
 
 <h1>CESSDA KPI validation dashboard</h1>
 
-Thanks to your contributions, CESSDA has now collected key performance indicators (C-KPIs) for 2025 to measure our progress and impact within the European Research Area. 
+::: {.callout-important appearance="default" }
+## For Internal use only
+This dashboard is intended exclusively for the validation of CESSDA Key Performance Indicator (C-KPI) data by CESSDA Service Providers (SPs). The data displayed are preliminary and may be revised following validation. Please do not circulate, publish, cite, or share this dashboard or the exported images, outside the validation process.
+:::
 
-This dashboard supports the validation of C-KPI data. 
+<br>
+Thank you for your contributions. CESSDA has now collected the key performance indicators (C-KPIs) for the period 2025 to measure our progress and impact within the European Research Area. 
+
+This dashboard supports the validation of the submitted C-KPI data. 
 
 Here are some general instructions for navigating the country pages:
 
-  - **Left sidebar**: Select your country to view the SP-specific dashboard
-  - **Top right corner [...]**: Download your dashboard as an image or view source code
-  - **Legends**: 
+  - **Left sidebar**: Select your country to view your SP-specific dashboard
+  - **Top right corner [...]**: Download your dashboard as an image or view the source code
+  - **Legend**: 
     - [Blue]{style="color: steelblue;"}: Validated data
     - [Grey]{style="color: grey;"}: 2025 data pending validation
-    - [Red]{style="color: red;"}: Missing/unavailable data (displayed as outlier)
+    - [Red]{style="color: red;"}: Missing or unavailable data (displayed as outliers)
   - **Note**: Please refer to the validation Excel file for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)
 
 <h3>Next steps (to be completed by **2 July 2026**):</h3>
 
-1. Complete this short 3-question feedback [survey](https://forms.gle/KJnVJj9qKyhUJCm87). One response per SP is sufficient.
-1. If you identified any errors, please add your comments directly to the [Excel file](https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/edit?gid=663340094#gid=663340094).
+1. Complete the short 3-question feedback [survey](https://forms.gle/KJnVJj9qKyhUJCm87). One response per SP is sufficient.
+1. If you identify any errors, please add your comments directly to the [Excel file](https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/edit?gid=663340094#gid=663340094).
 
 If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office: <lorraine.wong@cessda.eu>.
 
