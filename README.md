@@ -29,7 +29,7 @@ does not need internet access. When new data is available in Google Sheets, refr
 ```python
 from sp_analysis import load_data
 
-df = load_data('https://docs.google.com/spreadsheets/d/1sREWbJdEYFjckWHcgAaUTnb6uQIuyM-bs-Un12ZmVaA/gviz/tq?tqx=out:csv&gid=598429315')
+df = load_data('https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/gviz/tq?tqx=out:csv&gid=663340094')
 
 df.to_csv('data/sp_data.csv', index=False)
 ```
