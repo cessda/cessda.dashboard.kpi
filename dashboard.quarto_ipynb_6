@@ -1,0 +1,555 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"SP KPI Dashboard\"\n",
+        "date: today\n",
+        "format:\n",
+        "  dashboard:\n",
+        "    theme: cosmo\n",
+        "    scrolling: true\n",
+        "    include-in-header:\n",
+        "      text: |\n",
+        "        <style>\n",
+        "          .navbar { display: none !important; }\n",
+        "          .quarto-dashboard-content { margin-top: 0 !important; }\n",
+        "        </style>\n",
+        "execute:\n",
+        "  echo: false\n",
+        "  warning: false\n",
+        "  message: false\n",
+        "jupyter: sp-analysis\n",
+        "---"
+      ],
+      "id": "2dc80c94"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| include: false\n",
+        "from sp_analysis import load_data, prepare_by_kpi_all_countries, facet_chart_by_country, KPI_LABELS\n",
+        "df = load_data()\n",
+        "ALL_KPIS = list(KPI_LABELS.keys())\n",
+        "long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)"
+      ],
+      "id": "1bf3b745",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# {.sidebar}\n",
+        "\n",
+        "**Countries**\n",
+        "\n",
+        "---\n",
+        "\n",
+        "<nav class=\"nav flex-column nav-pills\">\n",
+        "\n",
+        "  <a class=\"nav-link\" href=\"\">Home</a>\n",
+        "  <a class=\"nav-link\" href=\"#austria\">Austria</a>\n",
+        "  <a class=\"nav-link\" href=\"#belgium\">Belgium</a>\n",
+        "  <a class=\"nav-link\" href=\"#switzerland\">Switzerland</a>\n",
+        "  <a class=\"nav-link\" href=\"#czecha\">Czecha</a>\n",
+        "  <a class=\"nav-link\" href=\"#germany\">Germany</a>\n",
+        "  <a class=\"nav-link\" href=\"#greece\">Greece</a>\n",
+        "  <a class=\"nav-link\" href=\"#finland\">Finland</a>\n",
+        "  <a class=\"nav-link\" href=\"#france\">France</a>\n",
+        "  <a class=\"nav-link\" href=\"#croatia\">Croatia</a>\n",
+        "  <a class=\"nav-link\" href=\"#hungary\">Hungary</a>\n",
+        "  <a class=\"nav-link\" href=\"#ireland\">Ireland</a>\n",
+        "  <a class=\"nav-link\" href=\"#iceland\">Iceland</a>\n",
+        "  <a class=\"nav-link\" href=\"#lithuania\">lithuania</a>\n",
+        "  <a class=\"nav-link\" href=\"#italy\">Italy</a>\n",
+        "  <a class=\"nav-link\" href=\"#Lithuania\">Lithuania</a>\n",
+        "  <a class=\"nav-link\" href=\"#netherlands\">Netherlands</a>\n",
+        "  <a class=\"nav-link\" href=\"#norway\">Norway</a>\n",
+        "  <a class=\"nav-link\" href=\"#macedonia\">North Macedonia</a>\n",
+        "  <a class=\"nav-link\" href=\"#portugal\">Portugal</a>\n",
+        "  <a class=\"nav-link\" href=\"#sweden\">Sweden</a>\n",
+        "  <a class=\"nav-link\" href=\"#slovenia\">Slovenia</a>\n",
+        "  <a class=\"nav-link\" href=\"#slovakia\">Slovakia</a>\n",
+        "  <a class=\"nav-link\" href=\"#united-kingdom\">United Kingdom</a>\n",
+        "</nav>\n",
+        "\n",
+        "# Home\n",
+        "\n",
+        "<h1>CESSDA KPI validation dashboard</h1>\n",
+        "\n",
+        "Thanks to your contributions, CESSDA has now collected key performance indicators (C-KPIs) for 2025 to measure our progress and impact within the European Research Area. \n",
+        "\n",
+        "This dashboard supports the validation of C-KPI data. \n",
+        "\n",
+        "Here are some general instructions for navigating the country pages:\n",
+        "\n",
+        "  - **Left sidebar**: Select your country to view the SP-specific dashboard\n",
+        "  - **Top right corner [...]**: Download your dashboard as an image or view source code\n",
+        "  - **Legends**: \n",
+        "    - [Blue]{style=\"color: steelblue;\"}: Validated data\n",
+        "    - [Grey]{style=\"color: grey;\"}: 2025 data pending validation\n",
+        "    - [Red]{style=\"color: red;\"}: Missing/unavailable data (displayed as outlier)\n",
+        "  - **Note**: Please refer to the validation Excel file for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)\n",
+        "\n",
+        "Next steps (to be completed by **2 July 2026**):\n",
+        "\n",
+        "1. Complete this short 3-question feedback [survey](https://forms.gle/KJnVJj9qKyhUJCm87). One response per SP is sufficient.\n",
+        "1. If you identified any errors, please add your comments directly in the [Excel file](https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/edit?gid=663340094#gid=663340094).\n",
+        "\n",
+        "If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office <lorraine.wong@cessda.eu>.\n",
+        "\n",
+        "Thank you for your time and input!\n",
+        "\n",
+        "# Austria {#austria}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "ffb0914b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Austria', title='Austria – AUSSDA')"
+      ],
+      "id": "3c21b56d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Belgium {#belgium}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "34b678b6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Belgium', title='Belgium – SODHA')"
+      ],
+      "id": "8ba74122",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Czecha {#czecha}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "5e5f9580"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Czecha', title='Czecha – ČSDA')"
+      ],
+      "id": "cad589b9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Germany {#germany}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "dd479526"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Germany', title='Germany – GESIS')"
+      ],
+      "id": "fc7102a9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Greece {#greece}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "f2498f27"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Greece', title='Greece – SoDaNet')"
+      ],
+      "id": "787b86e8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Finland {#finland}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "4016ce9a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Finland', title='Finland – FSD')"
+      ],
+      "id": "6be3fab1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# France {#france}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "98fcf099"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'France', title='France – Progedo')"
+      ],
+      "id": "1133e78c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Croatia {#croatia}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "1908cd8f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Croatia', title='Croatia – CROSSDA')"
+      ],
+      "id": "04e0ae79",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Hungary {#hungary}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "1d97c613"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Hungary', title='Hungary – TÁRKI')"
+      ],
+      "id": "3a96f308",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Ireland {#ireland}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "1818fde0"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Ireland', title='Ireland – ISSDA')"
+      ],
+      "id": "f9501df6",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Iceland {#iceland}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "cd0f1f52"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Iceland', title='Iceland – DATICE')"
+      ],
+      "id": "7fe4cdae",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Italy {#italy}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "1827c56b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Italy', title='Italy – DASSI')"
+      ],
+      "id": "5e808053",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Lithuania {#lithuania}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "75f59138"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Lithuania', title='Lithuania – LiDA')"
+      ],
+      "id": "78139d8a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Netherlands {#netherlands}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "96c49b24"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Netherlands', title='Netherlands – DANS')"
+      ],
+      "id": "fb86a6bc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Norway {#norway}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "0e08611c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Norway', title='Norway – Sikt')"
+      ],
+      "id": "22b6d148",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Macedonia {#macedonia}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "8faeb7ca"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'North Macedonia', title='North Macedonia – MK-DASS')"
+      ],
+      "id": "edf237ff",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Portugal {#portugal}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "0f9b1f95"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Portugal', title='Portugal – APIS')"
+      ],
+      "id": "27f17a5f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Switzerland {#switzerland}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "7c7251c3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Switzerland', title='Switzerland – FORS')"
+      ],
+      "id": "79483ca6",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Sweden {#sweden}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "76401875"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Sweden', title='Sweden – SND')"
+      ],
+      "id": "35e179f4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Slovenia {#slovenia}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "f62767f5"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Slovenia', title='Slovenia – ADP')"
+      ],
+      "id": "8439a239",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Slovakia {#slovakia}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "8159cc89"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'Slovakia', title='Slovakia – SASD')"
+      ],
+      "id": "f687d669",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# United Kingdom {#united-kingdom}\n",
+        "\n",
+        "## Row"
+      ],
+      "id": "36c68e23"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "facet_chart_by_country(long_df, 'United Kingdom', title='United Kingdom – UKDS')"
+      ],
+      "id": "65b2e91f",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "sp-analysis",
+      "language": "python",
+      "display_name": "sp-analysis",
+      "path": "/Users/lorrainewongmw/Library/Jupyter/kernels/sp-analysis"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
