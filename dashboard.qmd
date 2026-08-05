@@ -71,7 +71,10 @@ This dashboard is intended exclusively for the validation of CESSDA Key Performa
 <br>
 Thank you for your contributions. CESSDA has now collected the key performance indicators (C-KPIs) for the period 2025 to measure our progress and impact within the European Research Area. 
 
+This dashboard contains the most up-to-date C-KPI data, reflecting all validated revisions received as of **23 July 2026**.
+<!-- put back for the pre-validation version (v0)
 This dashboard supports the validation of the submitted C-KPI data. 
+-->
 
 Here are some general instructions for navigating the country pages:
 
@@ -79,10 +82,14 @@ Here are some general instructions for navigating the country pages:
   - **Top right corner [...]**: Download your dashboard as an image or view the source code
   - **Legend**: 
     - [Blue]{style="color: steelblue;"}: Validated data
-    - [Grey]{style="color: grey;"}: 2025 data pending validation
+    - [Grey]{style="color: grey;"}: Last validated in July 2026
+<!-- put back for the pre-validation version (v0)    - [Grey]{style="color: grey;"}: 2025 data pending validation -->
     - [Red]{style="color: red;"}: Missing or unavailable data (displayed as outliers)
-  - **Note**: Please refer to the validation Excel file for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)
+  - **Note**: Please refer to the [Excel file](https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/edit?gid=663340094#gid=663340094) for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)
 
+Thank you for your support in the validation process.
+
+<!-- put back for the pre-validation version (v0)
 <h3>Next steps (to be completed by **2 July 2026**):</h3>
 
 1. Complete the short 3-question feedback [survey](https://forms.gle/KJnVJj9qKyhUJCm87). One response per SP is sufficient.
@@ -91,7 +98,7 @@ Here are some general instructions for navigating the country pages:
 If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office: <lorraine.wong@cessda.eu>.
 
 Thank you for your time and input!
-
+--> 
 # Austria {#austria}
 
 ## Row
