@@ -282,7 +282,7 @@ def main_page(request: Request) -> None:
                 country_select.set_value(None)
                 year_start.set_value(YEAR_MIN)
                 year_end.set_value(YEAR_MAX)
-                agg_toggle.set_value("sum")
+                # agg_toggle.set_value("sum")
                 _sync_objective_chips()
                 _push_url(state)
                 refresh_table()
