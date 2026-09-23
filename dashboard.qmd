@@ -71,7 +71,7 @@ This dashboard is intended exclusively for the validation of CESSDA Key Performa
 <br>
 Thank you for your contributions. CESSDA has now collected the key performance indicators (C-KPIs) for the period 2025 to measure our progress and impact within the European Research Area. 
 
-This dashboard contains the most up-to-date C-KPI data, reflecting all validated revisions received as of **23 July 2026**.
+This dashboard contains the most up-to-date C-KPI data, reflecting all validated revisions received as of **23 September 2026**.
 <!-- put back for the pre-validation version (v0)
 This dashboard supports the validation of the submitted C-KPI data. 
 -->
@@ -98,7 +98,16 @@ Thank you for your support in the validation process.
 If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office: <lorraine.wong@cessda.eu>.
 
 Thank you for your time and input!
+
 --> 
+
+---
+
+<div style="text-align: right"> [Privacy Policy and Cookies](https://www.cessda.eu/Privacy-Policy) </div>
+
+<div style="text-align: right"> [Acceptable Use Policy](https://www.cessda.eu/Acceptable-Use-Policy) </div>
+
+
 # Austria {#austria}
 
 ## Row
