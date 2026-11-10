@@ -10,6 +10,8 @@ format:
         <style>
           .navbar { display: none !important; }
           .quarto-dashboard-content { margin-top: 0 !important; }
+          .cessda-logo { width: 140px; max-width: 100%; display: block; margin: 0 0 1rem; }
+          figure:has(.cessda-logo) figcaption { display: none; }
         </style>
 execute:
   echo: false
@@ -27,6 +29,8 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
 ```
 
 # {.sidebar}
+
+![CESSDA](assets/cessda-logo.png){.cessda-logo}
 
 **Countries**
 
