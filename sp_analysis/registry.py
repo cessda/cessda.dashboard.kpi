@@ -32,7 +32,7 @@ _ENTRIES: list[KPIEntry] = [
     # ── Access & Use ───────────────────────────────────────────────────────
     KPIEntry(
         id='c1_visits',
-        label='Total number of visits across all externally facing products',
+        label='Number of visits across all externally facing products',
         objective='Enabling scientific excellence',
         unit='count',
         aggregations=['sum', 'median'],
@@ -40,7 +40,7 @@ _ENTRIES: list[KPIEntry] = [
     ),
     KPIEntry(
         id='c2_user',
-        label='Total number of registred user accounts',
+        label='Number of registred user accounts',
         objective='Enabling scientific excellence',
         unit='count',
         aggregations=['sum', 'median'],
@@ -48,7 +48,7 @@ _ENTRIES: list[KPIEntry] = [
     ),
     KPIEntry(
         id='c3_pdoDeliver_pid',
-        label='Total number of primary digital objects delivered to users',
+        label='Number of primary digital objects delivered to users',
         objective='Optimising data use',
         unit='count',
         aggregations=['sum', 'median'],
@@ -108,7 +108,7 @@ _ENTRIES: list[KPIEntry] = [
     # ── Human Capital ──────────────────────────────────────────────────────
     KPIEntry(
         id='c13_staff',
-        label='Total number of staff (FTE) per SP',
+        label='Number of staff (FTE) per SP',
         objective='Optimising management',
         unit='FTE',
         aggregations=['sum', 'median'],

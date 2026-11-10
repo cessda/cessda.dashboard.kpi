@@ -22,7 +22,7 @@ from .static_dashboard import STATUS_DOMAIN, STATUS_RANGE
 # ── Shared theme ───────────────────────────────────────────────────────────────
 
 _FONT = 'IBM Plex Sans'
-_COLOR_PRIMARY = '#2563EB'   # blue-600
+_COLOR_PRIMARY = '#1083d1'   # blue-600
 _COLOR_MEDIAN  = '#059669'   # emerald-600
 
 
@@ -47,7 +47,7 @@ def build_sparkline(
 ) -> alt.Chart:
     kpi_ts = ts_df[ts_df['kpi'] == kpi_id][['year', 'value']]
     
-    base = alt.Chart(kpi_ts).mark_line(color='#2563eb', strokeWidth=1.5).encode(
+    base = alt.Chart(kpi_ts).mark_line(color='#1083d1', strokeWidth=1.5).encode(
         x=alt.X('year:O', axis=None),
         y=alt.Y('value:Q', axis=None, scale=alt.Scale(zero=False)),
     )

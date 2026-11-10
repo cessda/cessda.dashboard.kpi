@@ -51,8 +51,8 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
   <a class="nav-link" href="#hungary">Hungary</a>
   <a class="nav-link" href="#ireland">Ireland</a>
   <a class="nav-link" href="#iceland">Iceland</a>
-  <a class="nav-link" href="#lithuania">lithuania</a>
   <a class="nav-link" href="#italy">Italy</a>
+  <a class="nav-link" href="#lithuania">Lithuania</a>
   <a class="nav-link" href="#netherlands">Netherlands</a>
   <a class="nav-link" href="#norway">Norway</a>
   <a class="nav-link" href="#macedonia">North Macedonia</a>
@@ -65,33 +65,59 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
 
 # Home
 
-Thanks to your contributions, CESSDA has now collected key performance indicators (C-KPIs) for 2025 to measure our progress and impact within the European Research Area. 
+<h1>CESSDA KPI validation dashboard</h1>
 
-This dashboard supports the validation of data. Here are some general instructions:
+::: {.callout-important appearance="default" }
+## For Internal use only
+This dashboard is intended exclusively for the validation of CESSDA Key Performance Indicator (C-KPI) data by CESSDA Service Providers (SPs). The data displayed are preliminary and may be revised following validation. Please do not circulate, publish, cite, or share this dashboard or the exported images, outside the validation process.
+:::
 
-  - *Left sidebar*: Select your country to view the SP-specific dashboard
-  - *Top right corner [...]*: Download your dashboard as an image or view source code
-  - *Legends*: 
-    - Blue: Validated data
-    - Grey: 2025 data pending validation
-    - Red: Missing/unavailable data (displayed as outlier)
+<br>
+Thank you for your contributions. CESSDA has now collected the key performance indicators (C-KPIs) for the period 2025 to measure our progress and impact within the European Research Area. 
 
-Note: Please refer to the validation Excel file for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)
+This dashboard contains the most up-to-date C-KPI data, reflecting all validated revisions received as of **23 September 2026**.
+<!-- put back for the pre-validation version (v0)
+This dashboard supports the validation of the submitted C-KPI data. 
+-->
 
-If you identified any errors, please add comments directly in the Excel file.
+Here are some general instructions for navigating the country pages:
 
-Moreover, please complete this short 3-question feedback survey by [date]. One response per SP is sufficient.
+  - **Left sidebar**: Select your country to view your SP-specific dashboard
+  - **Top right corner [...]**: Download your dashboard as an image or view the source code
+  - **Legend**: 
+    - [Blue]{style="color: steelblue;"}: Validated data
+    - [Grey]{style="color: grey;"}: Last validated in July 2026
+<!-- put back for the pre-validation version (v0)    - [Grey]{style="color: grey;"}: 2025 data pending validation -->
+    - [Red]{style="color: red;"}: Missing or unavailable data (displayed as outliers)
+  - **Note**: Please refer to the [Excel file](https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/edit?gid=663340094#gid=663340094) for the categorical KPIs (i.e., C-KPI-07, 09, 18, 19a)
 
-If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office <lorraine.wong@cessda.eu>.
+Thank you for your support in the validation process.
+
+<!-- put back for the pre-validation version (v0)
+<h3>Next steps (to be completed by **2 July 2026**):</h3>
+
+1. Complete the short 3-question feedback [survey](https://forms.gle/KJnVJj9qKyhUJCm87). One response per SP is sufficient.
+1. If you identify any errors, please add your comments directly to the [Excel file](https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/edit?gid=663340094#gid=663340094).
+
+If you have any questions, please contact Lorraine Wong, Senior Science Officer at the CESSDA Main Office: <lorraine.wong@cessda.eu>.
 
 Thank you for your time and input!
+
+--> 
+
+---
+
+<div style="text-align: right"> [Privacy Policy and Cookies](https://www.cessda.eu/Privacy-Policy) </div>
+
+<div style="text-align: right"> [Acceptable Use Policy](https://www.cessda.eu/Acceptable-Use-Policy) </div>
+
 
 # Austria {#austria}
 
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Austria', title='Austria')
+facet_chart_by_country(long_df, 'Austria', title='Austria – AUSSDA')
 ```
 
 
@@ -100,7 +126,7 @@ facet_chart_by_country(long_df, 'Austria', title='Austria')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Belgium', title='Belgium')
+facet_chart_by_country(long_df, 'Belgium', title='Belgium – SODHA')
 ```
 
 
@@ -109,7 +135,7 @@ facet_chart_by_country(long_df, 'Belgium', title='Belgium')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Czecha', title='Czecha')
+facet_chart_by_country(long_df, 'Czecha', title='Czecha – ČSDA')
 ```
 
 # Germany {#germany}
@@ -117,7 +143,7 @@ facet_chart_by_country(long_df, 'Czecha', title='Czecha')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Germany', title='Germany')
+facet_chart_by_country(long_df, 'Germany', title='Germany – GESIS')
 ```
 
 
@@ -126,7 +152,7 @@ facet_chart_by_country(long_df, 'Germany', title='Germany')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Greece', title='Greece')
+facet_chart_by_country(long_df, 'Greece', title='Greece – SoDaNet')
 ```
 
 # Finland {#finland}
@@ -134,7 +160,7 @@ facet_chart_by_country(long_df, 'Greece', title='Greece')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Finland', title='Finland')
+facet_chart_by_country(long_df, 'Finland', title='Finland – FSD')
 ```
 
 # France {#france}
@@ -142,7 +168,7 @@ facet_chart_by_country(long_df, 'Finland', title='Finland')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'France', title='France')
+facet_chart_by_country(long_df, 'France', title='France – Progedo')
 ```
 
 # Croatia {#croatia}
@@ -150,7 +176,7 @@ facet_chart_by_country(long_df, 'France', title='France')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Croatia', title='Croatia')
+facet_chart_by_country(long_df, 'Croatia', title='Croatia – CROSSDA')
 ```
 
 # Hungary {#hungary}
@@ -158,7 +184,7 @@ facet_chart_by_country(long_df, 'Croatia', title='Croatia')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Hungary', title='Hungary')
+facet_chart_by_country(long_df, 'Hungary', title='Hungary – TÁRKI')
 ```
 
 # Ireland {#ireland}
@@ -166,7 +192,7 @@ facet_chart_by_country(long_df, 'Hungary', title='Hungary')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Ireland', title='Ireland')
+facet_chart_by_country(long_df, 'Ireland', title='Ireland – ISSDA')
 ```
 
 # Iceland {#iceland}
@@ -174,7 +200,7 @@ facet_chart_by_country(long_df, 'Ireland', title='Ireland')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Iceland', title='Iceland')
+facet_chart_by_country(long_df, 'Iceland', title='Iceland – DATICE')
 ```
 
 # Italy {#italy}
@@ -182,16 +208,15 @@ facet_chart_by_country(long_df, 'Iceland', title='Iceland')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Italy', title='Italy')
+facet_chart_by_country(long_df, 'Italy', title='Italy – DASSI')
 ```
-
 
 # Lithuania {#lithuania}
 
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Lithuania', title='Lithuania')
+facet_chart_by_country(long_df, 'Lithuania', title='Lithuania – LiDA')
 ```
 
 # Netherlands {#netherlands}
@@ -199,7 +224,7 @@ facet_chart_by_country(long_df, 'Lithuania', title='Lithuania')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Netherlands', title='Netherlands')
+facet_chart_by_country(long_df, 'Netherlands', title='Netherlands – DANS')
 ```
 
 # Norway {#norway}
@@ -207,7 +232,7 @@ facet_chart_by_country(long_df, 'Netherlands', title='Netherlands')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Norway', title='Norway')
+facet_chart_by_country(long_df, 'Norway', title='Norway – Sikt')
 ```
 
 # Macedonia {#macedonia}
@@ -215,7 +240,7 @@ facet_chart_by_country(long_df, 'Norway', title='Norway')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'North Macedonia', title='North Macedonia')
+facet_chart_by_country(long_df, 'North Macedonia', title='North Macedonia – MK-DASS')
 ```
 
 # Portugal {#portugal}
@@ -223,7 +248,7 @@ facet_chart_by_country(long_df, 'North Macedonia', title='North Macedonia')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Portugal', title='Portugal')
+facet_chart_by_country(long_df, 'Portugal', title='Portugal – APIS')
 ```
 
 
@@ -233,7 +258,7 @@ facet_chart_by_country(long_df, 'Portugal', title='Portugal')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Switzerland', title='Switzerland')
+facet_chart_by_country(long_df, 'Switzerland', title='Switzerland – FORS')
 ```
 
 # Sweden {#sweden}
@@ -241,7 +266,7 @@ facet_chart_by_country(long_df, 'Switzerland', title='Switzerland')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Sweden', title='Sweden')
+facet_chart_by_country(long_df, 'Sweden', title='Sweden – SND')
 ```
 
 # Slovenia {#slovenia}
@@ -249,7 +274,7 @@ facet_chart_by_country(long_df, 'Sweden', title='Sweden')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Slovenia', title='Slovenia')
+facet_chart_by_country(long_df, 'Slovenia', title='Slovenia – ADP')
 ```
 
 # Slovakia {#slovakia}
@@ -257,7 +282,7 @@ facet_chart_by_country(long_df, 'Slovenia', title='Slovenia')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'Slovakia', title='Slovakia')
+facet_chart_by_country(long_df, 'Slovakia', title='Slovakia – SASD')
 ```
 
 # United Kingdom {#united-kingdom}
@@ -265,5 +290,5 @@ facet_chart_by_country(long_df, 'Slovakia', title='Slovakia')
 ## Row
 
 ```{python}
-facet_chart_by_country(long_df, 'United Kingdom', title='United Kingdom')
+facet_chart_by_country(long_df, 'United Kingdom', title='United Kingdom – UKDS')
 ```

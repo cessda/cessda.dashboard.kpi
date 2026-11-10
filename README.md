@@ -1,7 +1,8 @@
-# Cessda report dashboard
+# CESSDA KPIs report dashboard
 
 ## Prerequisites
 
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
 - [Nix](https://nixos.org/download) with flakes enabled
 - [devenv](https://devenv.sh/getting-started/)
 
@@ -28,7 +29,7 @@ does not need internet access. When new data is available in Google Sheets, refr
 ```python
 from sp_analysis import load_data
 
-df = load_data('https://docs.google.com/spreadsheets/d/1sREWbJdEYFjckWHcgAaUTnb6uQIuyM-bs-Un12ZmVaA/gviz/tq?tqx=out:csv&gid=598429315')
+df = load_data('https://docs.google.com/spreadsheets/d/1m9Phl1uxPN9hL4zmgSGFMOFs1X-UmjxP/gviz/tq?tqx=out:csv&gid=663340094')
 
 df.to_csv('data/sp_data.csv', index=False)
 ```
@@ -39,15 +40,22 @@ df.to_csv('data/sp_data.csv', index=False)
 uv run quarto preview dashboard.qmd
 ```
 
-**3. Commit and push:**
+**3. Commit and push.**
+
+Once the snapshot looks right, commit the updated CSV on
+a short-lived branch rather than pushing straight to `master`:
 
 ```bash
+git switch -c chore/refresh-data
 git add data/sp_data.csv
 git commit -m "chore: refresh data"
-git push origin main
+git push -u origin chore/refresh-data
 ```
 
-The CI pipeline will automatically re-render and publish the updated dashboard to GitLab Pages.
+Then open a merge request against `master`. The CI pipeline re-renders the
+dashboard on the branch so you can review the build before it goes live; once the
+PR is merged, the updated dashboard publishes to https://kpi-dashboard.cessda.eu automatically.
+
 
 ## Project structure
 
