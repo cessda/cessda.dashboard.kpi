@@ -158,7 +158,7 @@ def main_page(request: Request) -> None:
     result = _recompute(state)
 
     # ── Layout ─────────────────────────────────────────────────────────────
-    with ui.row().classes('w-full gap-0 items-stretch'):
+    with ui.row().classes('w-full gap-0'):
 
         # ── Sidebar ────────────────────────────────────────────────────────
         with (
@@ -299,6 +299,8 @@ def main_page(request: Request) -> None:
                 CESSDA monitors its contribution to the European Research Area and alignment with the ESFRI objectives through a set of CESSDA key performance indicators (C-KPIs).
                 This dashboard presents these indicators and provides an overview of the collective outcomes achieved across the consortium. It is intended to support performance monitoring and trend analysis.
 
+                **Trend**: the blue line is the KPI's yearly total for the selected countries; the dashed grey line is the median across all countries, for comparison.
+
                 **Update frequency**: Annual
                 """)
 
@@ -399,22 +401,24 @@ def main_page(request: Request) -> None:
             )
             refresh_table()
 
-            # ── Footer ─────────────────────────────────────────────────────
-            with ui.row().classes(
-                'w-full justify-center items-center gap-2 pt-4 mt-auto text-xs text-slate-500 '
-                'border-t border-slate-200'
-            ):
-                ui.link(
-                    'Privacy policy & cookies',
-                    'https://www.cessda.eu/Privacy-Policy',
-                    new_tab=True,
-                ).classes('text-slate-500 no-underline')
-                ui.label('·').props('aria-hidden=true')
-                ui.link(
-                    'Acceptable use policy',
-                    'https://www.cessda.eu/Acceptable-Use-Policy',
-                    new_tab=True,
-                ).classes('text-slate-500 no-underline')
+    with ui.footer().classes("bg-dark"):
+        ui.markdown(
+            """**Data Disclaimer**: The data displayed in this dashboard is collected from CESSDA Service Providers.
+            While KPI definitions have been standardised where possible, differences in organisational context,
+            reporting practices, and data quality may affect comparability. Figures may be updated as source data is revised."""
+        )
+        with ui.row().classes("w-full justify-center items-center gap-2 text-xs"):
+            ui.link(
+                "Privacy policy & cookies",
+                "https://www.cessda.eu/Privacy-Policy",
+                new_tab=True,
+            ).classes("text-white")
+            ui.label("·").props("aria-hidden=true")
+            ui.link(
+                "Acceptable use policy",
+                "https://www.cessda.eu/Acceptable-Use-Policy",
+                new_tab=True,
+            ).classes("text-white")
 
 
 ui.run(title="CESSDA Public Dashboard", port=8888, reload=True)
