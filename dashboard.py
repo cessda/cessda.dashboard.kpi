@@ -149,7 +149,7 @@ def main_page(request: Request) -> None:
     result = _recompute(state)
 
     # ── Layout ─────────────────────────────────────────────────────────────
-    with ui.row().classes('w-full gap-0'):
+    with ui.row().classes('w-full gap-0 items-stretch'):
 
         # ── Sidebar ────────────────────────────────────────────────────────
         with ui.column().classes('sidebar w-64 p-5 gap-4 flex-shrink-0'):
@@ -273,7 +273,6 @@ def main_page(request: Request) -> None:
                 country_select.set_value(None)
                 year_start.set_value(YEAR_MIN)
                 year_end.set_value(YEAR_MAX)
-                agg_toggle.set_value('sum')
                 _sync_objective_chips()
                 _push_url(state)
                 refresh_table()
@@ -364,6 +363,23 @@ def main_page(request: Request) -> None:
                 f"Stats for year: {int(result['stats']['year'].iloc[0]) if not result['stats'].empty else '—'}"
             )
             refresh_table()
+
+            # ── Footer ─────────────────────────────────────────────────────
+            with ui.row().classes(
+                'w-full justify-center items-center gap-2 pt-4 mt-auto text-xs text-slate-500 '
+                'border-t border-slate-200'
+            ):
+                ui.link(
+                    'Privacy policy & cookies',
+                    'https://www.cessda.eu/Privacy-Policy',
+                    new_tab=True,
+                ).classes('text-slate-500 no-underline')
+                ui.label('·').props('aria-hidden=true')
+                ui.link(
+                    'Acceptable use policy',
+                    'https://www.cessda.eu/Acceptable-Use-Policy',
+                    new_tab=True,
+                ).classes('text-slate-500 no-underline')
 
 
 ui.run(title='CESSDA Public Dashboard', port=8888, reload=True)
