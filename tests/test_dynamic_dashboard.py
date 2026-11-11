@@ -126,6 +126,15 @@ class TestAggregateTimeSeries:
         val = result.loc[result['year'] == 2022, 'value']
         assert not val.isna().all()
 
+    def test_zero_is_treated_as_missing(self):
+        from sp_analysis.compute import aggregate_time_series
+        df = pd.DataFrame([
+            {'countryname': 'A', 'year': 2024, 'kpi': 'k', 'value': 10.0},
+            {'countryname': 'B', 'year': 2024, 'kpi': 'k', 'value': 0.0},
+        ])
+        assert aggregate_time_series(df, mode='sum')['value'].tolist() == [10.0]
+        assert aggregate_time_series(df, mode='median')['value'].tolist() == [10.0]
+
 
 class TestLatestStats:
     def test_returns_required_columns(self, long_df):
@@ -137,6 +146,27 @@ class TestLatestStats:
         from sp_analysis.compute import latest_stats
         result = latest_stats(long_df, reference_year=2021)
         assert (result['year'] == 2021).all()
+
+    def test_zero_excluded_from_stats(self):
+        from sp_analysis.compute import latest_stats
+        df = pd.DataFrame([
+            {'countryname': 'A', 'year': 2024, 'kpi': 'k', 'value': 10.0},
+            {'countryname': 'B', 'year': 2024, 'kpi': 'k', 'value': 20.0},
+            {'countryname': 'C', 'year': 2024, 'kpi': 'k', 'value': 0.0},
+        ])
+        row = latest_stats(df).iloc[0]
+        assert row['n_countries'] == 2
+        assert row['sum'] == 30
+        assert row['median'] == 15
+
+    def test_all_zero_latest_year_does_not_fall_back(self):
+        from sp_analysis.compute import latest_stats
+        df = pd.DataFrame([
+            {'countryname': 'A', 'year': 2023, 'kpi': 'k', 'value': 10.0},
+            {'countryname': 'A', 'year': 2024, 'kpi': 'k', 'value': 0.0},
+        ])
+        # 2024 is still the reference year, so there is no 2023 row
+        assert latest_stats(df).empty
 
     def test_empty_df_returns_empty(self):
         from sp_analysis.compute import latest_stats

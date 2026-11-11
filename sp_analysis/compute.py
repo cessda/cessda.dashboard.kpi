@@ -69,6 +69,7 @@ def aggregate_time_series(
     -------
     DataFrame with columns: year, kpi, value
     """
+    long_df = long_df[long_df['value'] != 0]  # zero means "not reported"
     grouped = long_df.groupby(['kpi', 'year'])['value']
     if mode == 'sum':
         result = grouped.sum(min_count=1)
@@ -103,6 +104,7 @@ def latest_stats(
     if reference_year is None:
         reference_year = int(df['year'].max())
 
+    df = df[df['value'] != 0]  # zero means "not reported"
     snapshot = df[df['year'] == reference_year]
     stats = (
         snapshot.groupby('kpi')['value']

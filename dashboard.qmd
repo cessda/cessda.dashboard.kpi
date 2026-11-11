@@ -30,7 +30,7 @@ long_df = prepare_by_kpi_all_countries(df, ALL_KPIS)
 
 # {.sidebar}
 
-![CESSDA](assets/cessda-logo.png){.cessda-logo}
+![CESSDA](assets/logo_2022_digital.png){.cessda-logo}
 
 **Countries**
 
