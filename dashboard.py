@@ -299,7 +299,9 @@ def main_page(request: Request) -> None:
                 CESSDA monitors its contribution to the European Research Area and alignment with the ESFRI objectives through a set of CESSDA key performance indicators (C-KPIs).
                 This dashboard presents these indicators and provides an overview of the collective outcomes achieved across the consortium. It is intended to support performance monitoring and trend analysis.
 
-                **Trend**: the blue line is the KPI's yearly total for the selected countries; the dashed grey line is the median across all countries, for comparison.
+                **Trend**: The blue line shows the yearly total for countries with available data; the dashed grey line shows their median.
+
+                **Interaction**: Select a country in the right panel to display its result as a dashed grey line.
 
                 **Update frequency**: Annual
                 """)
