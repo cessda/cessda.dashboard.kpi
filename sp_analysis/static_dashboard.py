@@ -19,7 +19,11 @@ KPI_LABELS = {
     'c19_pub':           'C-KPI-19 Publications',
 }
 
-STATUS_DOMAIN = ['Validated', 'To be validated', 'Missing']
+#  ──for pre-validation version (v0) ───────────────────────────────────────────────────────────────
+# STATUS_DOMAIN = ['Validated', 'To be validated', 'Missing']
+#  ──for validated version  ───────────────────────────────────────────────────────────────
+STATUS_DOMAIN = ['Validated', 'Validated in July 2026', 'Missing']
+
 STATUS_RANGE  = ['steelblue', 'grey', 'red']
 
 
@@ -75,7 +79,7 @@ def facet_chart_by_country(
 ) -> alt.FacetChart:
     country_data = data[data['countryname'] == country].copy()
     country_data['status'] = country_data.apply(
-        lambda r: 'To be validated' if r['year'] == 2025
+        lambda r: 'Validated in July 2026' if r['year'] == 2025   # change back to "To be validated" for v0
         else ('Validated' if pd.notna(r['value']) else 'Missing'),
         axis=1,
     )
