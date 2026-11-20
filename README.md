@@ -19,6 +19,17 @@ uv run jupyter notebook
 Then open `analysis.ipynb` and select the **sp-analysis** kernel via **Kernel → Change Kernel**.
 
 
+## Deployed pages
+
+The Docker image serves two pages from one container (nginx on port 80):
+
+- `/validation/` – static Quarto dashboard (`dashboard.qmd`)
+- `/collective-impact/` – interactive NiceGUI dashboard (`dashboard.py`)
+
+`/` redirects to `/validation/`. Run the NiceGUI app locally with `uv run dashboard.py`
+(http://localhost:8888). If the project lives on a volume without symlink support
+(exFAT/NTFS/SMB), keep the venv elsewhere: `export UV_PROJECT_ENVIRONMENT="$HOME/.venvs/cessda-dashboard-kpi"`.
+
 ## Updating the dashboard with new data
 
 The dashboard renders from a committed CSV file (`data/sp_data.csv`) so the CI pipeline
