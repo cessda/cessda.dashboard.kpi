@@ -18,6 +18,8 @@ Run:
 
 from __future__ import annotations
 
+import os
+
 import pandas as pd
 from nicegui import ui
 from starlette.requests import Request
@@ -125,8 +127,9 @@ def _build_query_string(state: DashboardState) -> str:
 def _push_url(state: DashboardState) -> None:
     """Silently update the browser URL bar without a page reload."""
     qs = _build_query_string(state)
-    url = f"/?{qs}" if qs else "/"
-    ui.run_javascript(f'history.replaceState(null, "", {url!r})')
+    # Keep the current path so the app works under a reverse-proxy prefix
+    suffix = f"?{qs}" if qs else ""
+    ui.run_javascript(f'history.replaceState(null, "", location.pathname + {suffix!r})')
 
 
 # ── Misc helpers ───────────────────────────────────────────────────────────────
@@ -423,4 +426,10 @@ def main_page(request: Request) -> None:
             ).classes("text-white")
 
 
-ui.run(title="CESSDA Public Dashboard", port=8888, reload=True)
+ui.run(
+    title="CESSDA Public Dashboard",
+    host=os.getenv("DASHBOARD_HOST", "0.0.0.0"),
+    port=8888,
+    reload=os.getenv("DASHBOARD_RELOAD", "1") == "1",
+    show=False,
+)
