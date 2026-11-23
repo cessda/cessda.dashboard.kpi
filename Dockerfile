@@ -35,6 +35,7 @@ COPY assets/ assets/
 COPY --from=builder /app/dashboard.html /usr/share/nginx/html/validation/index.html
 COPY --from=builder /app/dashboard_files/ /usr/share/nginx/html/validation/dashboard_files/
 COPY --from=builder /app/data.csv /usr/share/nginx/html/validation/data.csv
+COPY --from=builder /app/assets/ /usr/share/nginx/html/validation/assets/
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint.sh /entrypoint.sh
